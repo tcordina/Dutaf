@@ -1,0 +1,20 @@
+dutaf_index:
+    path:     /
+    defaults: { _controller: DutafBundle:Article:index }
+
+dutaf_view:
+    path: /catalogue
+    defaults:
+        _controller: DutafBundle:Article:view
+
+dutaf_article_add:
+    path: /add
+    defaults:
+        _controller: DutafBundle:Article:add
+
+dutaf_article_delete:
+    path: /delete/{id}
+    defaults:
+        _controller: DutafBundle:Article:delete
+    requirements:
+        id: \d+

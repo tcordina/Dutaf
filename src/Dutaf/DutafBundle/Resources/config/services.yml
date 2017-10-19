@@ -1,0 +1,4 @@
+services:
+#    dutaf.example:
+#        class: Articles\DutafBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
