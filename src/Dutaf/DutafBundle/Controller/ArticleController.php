@@ -61,6 +61,24 @@ class ArticleController extends Controller
         if($article === NULL) {
             throw new NotFoundHttpException("L'article numéro ".$id." n'éxiste pas.");
         }
+
+        $form = $this->createForm(ArticleType::class, $article);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($article);
+            $em->flush();
+            return new Response('Article modifié avec succès !');
+        }
+
+        $formView = $form->createView();
+
+        return $this->render('DutafBundle:Articles:add.html.twig', array(
+            'article' => $article,
+            'form' => $formView
+
+        ));
     }
 
     public function deleteAction($id)

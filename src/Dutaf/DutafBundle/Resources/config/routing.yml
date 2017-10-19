@@ -18,3 +18,10 @@ dutaf_article_delete:
         _controller: DutafBundle:Article:delete
     requirements:
         id: \d+
+
+dutaf_article_edit:
+    path: /edit/{id}
+    defaults:
+        _controller: DutafBundle:Article:edit
+    requirements:
+        id: \d+
