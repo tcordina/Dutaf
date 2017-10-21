@@ -2,7 +2,7 @@ dutaf_index:
     path:     /
     defaults: { _controller: DutafBundle:Article:index }
 
-dutaf_view:
+dutaf_article_view:
     path: /catalogue
     defaults:
         _controller: DutafBundle:Article:view
@@ -25,3 +25,8 @@ dutaf_article_edit:
         _controller: DutafBundle:Article:edit
     requirements:
         id: \d+
+
+dutaf_fournisseur_view:
+    path: /fournisseurs
+    defaults:
+        _controller: DutafBundle:Fournisseur:view

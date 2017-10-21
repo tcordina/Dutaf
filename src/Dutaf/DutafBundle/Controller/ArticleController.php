@@ -27,7 +27,7 @@ class ArticleController extends Controller
             ->findAll()
         ;
 
-        return $this->render('DutafBundle:Articles:view_article.html.twig', array(
+        return $this->render('DutafBundle:Articles:view.html.twig', array(
             'articles' => $articles
         ));
     }
