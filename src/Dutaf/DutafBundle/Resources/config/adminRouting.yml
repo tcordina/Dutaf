@@ -1,0 +1,32 @@
+admin_index:
+    path:     /
+    defaults: { _controller: DutafBundle:Admin:index }
+
+admin_article_view:
+    path: /articles
+    defaults:
+        _controller: DutafBundle:Admin:viewArticle
+
+admin_article_add:
+    path: /add
+    defaults:
+        _controller: DutafBundle:Article:add
+
+admin_article_delete:
+    path: /delete/{id}
+    defaults:
+        _controller: DutafBundle:Article:delete
+    requirements:
+        id: \d+
+
+admin_article_edit:
+    path: /edit/{id}
+    defaults:
+        _controller: DutafBundle:Article:edit
+    requirements:
+        id: \d+
+
+admin_fournisseur_view:
+    path: /fournisseurs
+    defaults:
+        _controller: DutafBundle:Admin:viewFournisseur

@@ -22,12 +22,12 @@
                     <td>{{ fournisseur.tel }}</td>
                     <td>{{ fournisseur.ville }}</td>
                     <td>
-                        {#<a href="{{ path('admin_fournisseur_edit', {'id': fournisseur.id}) }}" class="btn btn-primary">
+                        <a href="{{ path('admin_article_edit', {'id': fournisseur.id}) }}" class="btn btn-primary">
                             <i class="glyphicon glyphicon-cog"></i>
-                        </a>#}
+                        </a>
                     </td>
                     <td>
-                        <a href="{{ path('admin_fournisseur_delete', {'id': fournisseur.id}) }}" class="btn btn-danger">
+                        <a href="{{ path('dutaf_article_delete', {'id': fournisseur.id}) }}" class="btn btn-danger">
                             <i class="glyphicon glyphicon-trash"></i>
                         </a>
                     </td>

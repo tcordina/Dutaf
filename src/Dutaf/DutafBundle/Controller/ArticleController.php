@@ -13,9 +13,7 @@ class ArticleController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('DutafBundle:Articles:index.html.twig', array(
-            //
-        ));
+        return $this->render('DutafBundle:Articles:index.html.twig');
     }
 
     public function viewAction()
@@ -94,6 +92,6 @@ class ArticleController extends Controller
 
         $em->flush();
 
-        return $this->redirectToRoute('dutaf_view');
+        return $this->redirectToRoute('admin_index');
     }
 }

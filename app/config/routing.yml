@@ -2,6 +2,10 @@ dutaf:
     resource: "@DutafBundle/Resources/config/routing.yml"
     prefix: /
 
+admin:
+    resource: "@DutafBundle/Resources/config/adminRouting.yml"
+    prefix: /admin
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation

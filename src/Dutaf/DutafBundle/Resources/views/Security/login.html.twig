@@ -1,0 +1,23 @@
+{% extends 'DutafBundle::template.html.twig' %}
+
+{% block body %}
+
+<div class="container">
+    {% if error %}
+    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    <form action="{{ path('login') }}" method="POST" class="form-signin">
+        <h4 class="form-signin-heading">Please sign in</h4>
+        <div class="form-group">
+            <input class="form-control" type="text" id="username" name="_username" value="{{ username }}" placeholder="username">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" id="password" name="_password" placeholder="password">
+        </div>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+    </form>
+</div>
+
+{% endblock %}
