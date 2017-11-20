@@ -7,11 +7,6 @@ dutaf_article_view:
     defaults:
         _controller: DutafBundle:Article:view
 
-dutaf_fournisseur_view:
-    path: /fournisseurs
-    defaults:
-        _controller: DutafBundle:Fournisseur:view
-
 login:
     path: /login
     defaults:

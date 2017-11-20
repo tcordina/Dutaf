@@ -24,7 +24,7 @@ class ArticleType extends AbstractType
             ->add('nom', TextType::class)
             ->add('prix', MoneyType::class, array(
                 'scale' => 2,
-                'currency' => false
+                'currency' => 'EUR'
             ))
             ->add('quant', IntegerType::class)
             ->add('fournisseur', EntityType::class, array(
