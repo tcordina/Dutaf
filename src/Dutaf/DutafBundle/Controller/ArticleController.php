@@ -94,4 +94,24 @@ class ArticleController extends Controller
 
         return $this->redirectToRoute('admin_index');
     }
+
+    public function budgetAction($prix)
+    {
+        $article = $this->getDoctrine()->getManager()->getRepository('DutafBundle:Article');
+
+        $qb = $article->createQueryBuilder('a');
+        $qb ->select('a')
+            ->innerJoin('DutafBundle:Fournisseur', 'f', 'WITH', 'f.id = a.fournisseur')
+            ->where('a.prix <= ?1')
+            ->orderBy('a.prix', 'DESC')
+            ->setParameter(1, $prix)
+        ;
+
+        $query = $qb->getQuery();
+        $result = $query->getResult();
+
+        return $this->render('DutafBundle:Articles:budget.html.twig', array(
+            'articles' => $result
+        ));
+    }
 }

@@ -39,6 +39,9 @@
                 <li class="page-scroll">
                     <a href="{{ path('dutaf_article_view') }}">Catalogue</a>
                 </li>
+                <li class="page-scroll">
+                    <a href="{{ path('dutaf_article_budget', {'prix': 50}) }}">Budget</a>
+                </li>
                 {% if is_granted('ROLE_ADMIN') == true %}
                     <li class="page-scroll">
                         <a href="{{ path('admin_article_view') }}">Gestion articles</a>

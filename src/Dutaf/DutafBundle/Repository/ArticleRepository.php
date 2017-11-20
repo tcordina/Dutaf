@@ -10,4 +10,8 @@ namespace Dutaf\DutafBundle\Repository;
  */
 class ArticleRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getWhereBudget()
+    {
+        
+    }
 }

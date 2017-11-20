@@ -7,6 +7,13 @@ dutaf_article_view:
     defaults:
         _controller: DutafBundle:Article:view
 
+dutaf_article_budget:
+    path: /catalogue/budget/{prix}
+    defaults:
+        _controller: DutafBundle:Article:budget
+    requirements:
+        prix: \d+
+
 login:
     path: /login
     defaults:
