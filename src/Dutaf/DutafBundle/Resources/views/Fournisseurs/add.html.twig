@@ -1,0 +1,13 @@
+{% extends 'DutafBundle::template.html.twig' %}
+
+{% block title %}
+    Ajout fournisseur - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="col-md-offset-3 col-md-6">
+            {{ include("DutafBundle:Fournisseurs:form.html.twig") }}
+        </div>
+    </div>
+{% endblock %}

@@ -38,8 +38,51 @@ class FournisseurController extends Controller
 
         $formView = $form->createView();
 
-        return $this->render('DutafBundle:Fournisseur:add.html.twig', array(
+        return $this->render('DutafBundle:Fournisseurs:add.html.twig', array(
             'form' => $formView
         ));
+    }
+
+    public function editAction($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $fournisseur = $em->getRepository('DutafBundle:Fournisseur')->find($id);
+
+        if($fournisseur === NULL) {
+            throw new NotFoundHttpException("Le fournisseur numéro ".$id." n'éxiste pas.");
+        }
+
+        $form = $this->createForm(FournisseurType::class, $fournisseur);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($fournisseur);
+            $em->flush();
+            return new Response('Fournisseur '.$id.' modifié avec succès !');
+        }
+
+        $formView = $form->createView();
+
+        return $this->render('DutafBundle:Fournisseurs:edit.html.twig', array(
+            'fournisseur' => $fournisseur,
+            'form' => $formView
+
+        ));
+    }
+
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $fournisseur = $em->getRepository('DutafBundle:Fournisseur')->find($id);
+
+        if($fournisseur === NULL) {
+            throw new NotFoundHttpException("Le fournisseur numéro ".$id." n'éxiste pas.");
+        }
+
+        $em->remove($fournisseur);
+        $em->flush();
+
+        return $this->redirectToRoute('admin_fournisseur_view');
     }
 }

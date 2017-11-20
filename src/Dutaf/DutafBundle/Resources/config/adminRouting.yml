@@ -8,19 +8,19 @@ admin_article_view:
         _controller: DutafBundle:Admin:viewArticle
 
 admin_article_add:
-    path: /add
+    path: /article/add
     defaults:
         _controller: DutafBundle:Article:add
 
 admin_article_delete:
-    path: /delete/{id}
+    path: /article/delete/{id}
     defaults:
         _controller: DutafBundle:Article:delete
     requirements:
         id: \d+
 
 admin_article_edit:
-    path: /edit/{id}
+    path: /article/edit/{id}
     defaults:
         _controller: DutafBundle:Article:edit
     requirements:
@@ -30,3 +30,22 @@ admin_fournisseur_view:
     path: /fournisseurs
     defaults:
         _controller: DutafBundle:Admin:viewFournisseur
+
+admin_fournisseur_add:
+    path: /fournisseur/add
+    defaults:
+        _controller: DutafBundle:Fournisseur:add
+
+admin_fournisseur_delete:
+    path: /fournisseur/delete/{id}
+    defaults:
+        _controller: DutafBundle:Fournisseur:delete
+    requirements:
+        id: \d+
+
+admin_fournisseur_edit:
+    path: /fournisseur/edit/{id}
+    defaults:
+        _controller: DutafBundle:Fournisseur:edit
+    requirements:
+        id: \d+

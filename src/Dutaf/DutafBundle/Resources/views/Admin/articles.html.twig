@@ -5,8 +5,12 @@
 {% endblock %}
 
 {% block body %}
-<div class="container-toppage">
+{#<div class="container">#}
     <div align="center">
+        <a style="width:100px;" class="btn btn-primary" href="{{ path('admin_article_add') }}">
+            <i style="font-size: 200%" class="glyphicon glyphicon-plus-sign"></i>
+        </a>
+        <br/><br/>
         <table style="width: 75%; text-align: center;">
             <tr>
                 <th width="5%">#</th>
@@ -27,13 +31,13 @@
                     <td>{{ article.quant }}</td>
                     <td>{{ article.fournisseur.nom }}</td>
                     <td>
-                        <a href="{{ path('admin_article_edit', {'id': article.id}) }}" class="btn btn-primary">
-                            <i class="glyphicon glyphicon-cog"></i>
+                        <a href="{{ path('admin_article_edit', {'id': article.id}) }}">
+                            <i style="font-size:150%;" class="glyphicon glyphicon-cog"></i>
                         </a>
                     </td>
                     <td>
-                        <a href="{{ path('admin_article_delete', {'id': article.id}) }}" class="btn btn-danger">
-                            <i class="glyphicon glyphicon-trash"></i>
+                        <a href="{{ path('admin_article_delete', {'id': article.id}) }}">
+                            <i style="font-size:150%;" class="glyphicon glyphicon-trash text-danger"></i>
                         </a>
                     </td>
                 </tr>
@@ -41,6 +45,6 @@
                 Pas encore d'articles !
             {% endfor %}
         </table>
-    </div>
+    {#</div>#}
 </div>
 {% endblock %}

@@ -12,8 +12,6 @@
                 <th width="">Nom</th>
                 <th width="">Tel</th>
                 <th width="">Ville</th>
-                <th width="">Editer</th>
-                <th width="">Supprimer</th>
             </tr>
             {% for fournisseur in fournisseurs %}
                 <tr>
@@ -21,16 +19,6 @@
                     <td>{{ fournisseur.nom }}</td>
                     <td>{{ fournisseur.tel }}</td>
                     <td>{{ fournisseur.ville }}</td>
-                    <td>
-                        {#<a href="{{ path('admin_fournisseur_edit', {'id': fournisseur.id}) }}" class="btn btn-primary">
-                            <i class="glyphicon glyphicon-cog"></i>
-                        </a>#}
-                    </td>
-                    <td>
-                        <a href="{{ path('admin_fournisseur_delete', {'id': fournisseur.id}) }}" class="btn btn-danger">
-                            <i class="glyphicon glyphicon-trash"></i>
-                        </a>
-                    </td>
                 </tr>
             {% else %}
                 Pas encore de fournisseurs !

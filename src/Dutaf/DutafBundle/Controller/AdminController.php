@@ -19,8 +19,23 @@ class AdminController extends Controller
             ->getRepository('DutafBundle:Article')
             ->findAll()
         ;
+
         return $this->render('DutafBundle:Admin:articles.html.twig', array(
             'articles' => $articles
+        ));
+    }
+
+    public function viewFournisseurAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $fournisseurs = $em
+            ->getRepository('DutafBundle:Fournisseur')
+            ->findAll()
+        ;
+
+        return $this->render('DutafBundle:Admin:fournisseurs.html.twig', array(
+            'fournisseurs' => $fournisseurs
         ));
     }
 }

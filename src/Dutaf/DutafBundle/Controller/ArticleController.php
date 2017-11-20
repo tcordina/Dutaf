@@ -67,7 +67,7 @@ class ArticleController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($article);
             $em->flush();
-            return new Response('Article modifié avec succès !');
+            return new Response('Article'.$id.'modifié avec succès !');
         }
 
         $formView = $form->createView();
