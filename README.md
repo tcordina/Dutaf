@@ -50,11 +50,11 @@ La structure de ces tables s'appuie sur les fichiers d'entité disponibles dans 
 -----------------
 
 La manière la plus simple est de se rendre sur phpmyadmin et d'insérer directement les informations dans la table `user`
-...
-On y trouver 3 champs
-  Le champs id : à laisser vide
-  Le champs username : on y met ce qu'on veut
-  Le champs password : Encrypter le mdp de notre choix avec https://www.bcrypt.fr/ puis copier le résultat dans la table
+
+On y trouver 3 champs:
+  - Le champs id : à laisser vide
+  - Le champs username : on y met ce qu'on veut
+  - Le champs password : Encrypter le mdp de notre choix avec https://www.bcrypt.fr/ puis copier le résultat dans la table
   
 On peut aussi utiliser le bundle Fixtures (https://symfony.com/doc/master/bundles/DoctrineFixturesBundle)
 
