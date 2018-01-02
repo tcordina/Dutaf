@@ -13,10 +13,10 @@ $ cd /chemin_vers_la_racine_du_projet
 ````
 
 
-Pour que l'application fonctionne, il faut installer ses différentes dépendances. Ici nous avons composer installé en variable d'environnement. 
+Pour que l'application fonctionne, il faut installer ses différentes dépendances. Ici nous avons composer installé en variable d'environnement. (voir https://getcomposer.org/download/)
 
 ````
-$ composer update
+$ composer install
 ````
 
 les informations demandées lors de l'execution de `composer update` remplissent le fichier parameters.yml
