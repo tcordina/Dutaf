@@ -19,7 +19,7 @@ Pour que l'application fonctionne, il faut installer ses différentes dépendanc
 $ composer install
 ````
 
-les informations demandées lors de l'execution de `composer update` remplissent le fichier parameters.yml
+les informations demandées lors de l'execution de `composer install` remplissent le fichier parameters.yml
 
 Il faut ensuite mettre-à-jour l'autoloading de composer avec la commande suivante : 
 
